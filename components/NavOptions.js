@@ -2,6 +2,7 @@ import { FlatList, StyleSheet, Text, Touchable, View, TouchableOpacity, Image } 
 import React from 'react'
 import tw from 'twrnc'
 import { Icon } from '@rneui/base'
+import { useNavigation } from '@react-navigation/native'
 
 const data = [
     {
@@ -19,13 +20,17 @@ const data = [
 ]
 
 const navOptions = () => {
+
+    const navigation = useNavigation();
+
   return (
     <FlatList 
       horizontal
       data={data}
       keyExtractor={(item) => item.id}
       renderItem={({item}) => (
-        <TouchableOpacity
+        <TouchableOpacity 
+          onPress={() => navigation.navigate(item.screen)}
           style={tw`p-2 pl-6 pb-8 pt-4 bg-gray-200 m-2 w-40`}
         >
             <View>
