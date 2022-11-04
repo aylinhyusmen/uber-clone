@@ -6,6 +6,9 @@ import { GOOGLE_MAPS_APIKEY } from '@env'
 import { useDispatch, useSelector } from 'react-redux'
 import { setDestination } from '../slices/navSlice'
 import { useNavigation } from '@react-navigation/native'
+import NavFavorites from './NavFavorites'
+import { TouchableOpacity } from 'react-native-gesture-handler'
+import { Icon } from '@rneui/base'
 
 const NavigateCard = () => {
     const dispatch = useDispatch();
@@ -38,6 +41,31 @@ const NavigateCard = () => {
                 language: "en"
             }} />
         </View>
+
+        <NavFavorites />
+      </View>
+
+      <View style={tw`flex-row bg-white justify-evenly py-2 mt-auto border-t border-gray-100`}>
+        <TouchableOpacity onPress={() => {
+            navigation.navigate("RideOptionsCard")
+        }}
+         style={tw`flex flex-row justify-between w-24 px-4 py-3 rounded-full`}>
+            <Icon 
+            name="car"
+            type="font-awesome"
+            color="black"
+            size={16} />
+            <Text style={tw`text-center`}>Rides</Text>
+        </TouchableOpacity>
+        
+        <TouchableOpacity style={tw`flex flex-row justify-between w-24 px-4 py-3 rounded-full`}>
+            <Icon
+             name="fast-food-outline"
+              type="ionicon" 
+              color="black"
+               size={16} />
+            <Text style={tw`text-center`}>Eats</Text>
+        </TouchableOpacity>
       </View>
     </SafeAreaView>
   )
