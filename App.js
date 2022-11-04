@@ -23,8 +23,8 @@ export default function App() {
          style={{ flex: 1}}
          keyboardVerticalOffset={Platform.OS === 'ios' ? -64 : 0}>
         <Stack.Navigator>
-          <Stack.Screen name='HomeScreen' component={HomeScreen} options={{headershown: false,}}/>
-          <Stack.Screen name='MapScreen' component={MapScreen} options={{headershown: false,}}/>
+          <Stack.Screen name='HomeScreen' component={HomeScreen} options={{headerShown: false}}/>
+          <Stack.Screen name='MapScreen' component={MapScreen} options={{headerShown: false}}/>
 
         </Stack.Navigator>
         </KeyboardAvoidingView>

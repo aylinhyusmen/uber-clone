@@ -4,8 +4,8 @@ import tw from 'twrnc';
 import Map from '../components/Map';
 import { createStackNavigator } from '@react-navigation/stack';
 import NavigateCard from '../components/NavigateCard';
-import RidingOptionsCar from '../components/RidingOptionsCar';
-
+import RideOptionsCard
+ from '../components/RideOptionsCard';
 const MapScreen = () => {
   const Stack = createStackNavigator();
 
@@ -21,14 +21,14 @@ const MapScreen = () => {
           name="NavigateCard"
           component={NavigateCard}
           options={{
-            headerShown: false,
+            headerShown: false
           }}
           />
            <Stack.Screen 
           name="RideOptionsCard"
-          component={RidingOptionsCar}
+          component={RideOptionsCard}
           options={{
-            headerShown: false,
+            headerShown: false
           }}
           />
         </Stack.Navigator>
